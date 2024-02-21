@@ -15,7 +15,7 @@ public class Actividad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idactividad;
     private Date fecha;
-    private Tips tipo;
+    private String tipo;
     private Integer horas;
     private String actividad;
     private String observacion;

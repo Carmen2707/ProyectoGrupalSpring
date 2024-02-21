@@ -1,6 +1,7 @@
 package com.example.proyectogrupalspring.empresa;
 
 import com.example.proyectogrupalspring.alumno.Alumno;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,6 +21,7 @@ public class Empresa {
     private String responsable;
     private String observaciones;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "empresa",fetch = FetchType.EAGER)
     private List<Alumno> alumnos = new ArrayList<>();
 
