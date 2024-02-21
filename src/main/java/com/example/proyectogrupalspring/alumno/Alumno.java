@@ -18,27 +18,28 @@ public class Alumno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idalumno;
-    private String DNI;
-    private String Nombre;
-    private String Apellidos;
-    private String Contrasenya;
-    private String Email;
+    private String dni;
+    private String nombre;
+    private String apellidos;
+    private String contrasenya;
+    private String email;
 
     @ManyToOne
-    @JoinColumn(name = "Empresa", referencedColumnName = "idempresa")
-    private Empresa Empresa;
+    @JoinColumn(name = "empresa", referencedColumnName = "idempresa")
+    private Empresa empresa;
 
     @ManyToOne
-    @JoinColumn(name = "Tutor", referencedColumnName = "idprofesor")
-    private Profesor Tutor;
-    private String Observaciones;
-    private Date Nacimiento;
+    @JoinColumn(name = "tutor", referencedColumnName = "idprofesor")
+    private Profesor tutor;
+
+    private String observaciones;
+    private Date nacimiento;
     private Integer horasdual;
     private Integer horasfct;
-    private Integer Telefono;
+    private Integer telefono;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "Alumno", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "alumno", fetch = FetchType.EAGER)
     private List<Actividad> actividad_diaria = new ArrayList<>();
 
 }

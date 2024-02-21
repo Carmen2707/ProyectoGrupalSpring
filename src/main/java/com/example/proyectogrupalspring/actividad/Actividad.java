@@ -14,12 +14,12 @@ public class Actividad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idactividad;
-    private Date Fecha;
-    private Tips Tipo;
-    private Integer Horas;
-    private String Actividad;
-    private String Observacion;
+    private Date fecha;
+    private Tips tipo;
+    private Integer horas;
+    private String actividad;
+    private String observacion;
     @ManyToOne
-    @JoinColumn(name = "Alumno", referencedColumnName = "idalumno")
-    private Alumno Alumno;
+    @JoinColumn(name = "alumno", referencedColumnName = "idalumno")
+    private Alumno alumno;
 }

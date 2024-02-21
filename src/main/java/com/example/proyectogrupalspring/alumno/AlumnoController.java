@@ -5,6 +5,7 @@ import com.example.proyectogrupalspring.actividad.ActividadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,16 @@ public class AlumnoController {
     }
     @Autowired
     private SecurityService security;
+
+
+    /**
+    @GetMapping("")
+    public String home(Model model) {
+        model.addAttribute("alumnos",alumnoRepository.findAll());
+        return "home";
+    }**/
+
+
     @PostMapping("/post")
     public ResponseEntity<Alumno> regitrarAlumno(@RequestBody Alumno alumno, @RequestParam String token) {
         if (security.validateToken(token)) {
