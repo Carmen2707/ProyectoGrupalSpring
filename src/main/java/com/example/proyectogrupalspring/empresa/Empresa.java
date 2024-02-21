@@ -14,13 +14,13 @@ public class Empresa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idempresa ;
-    private String Nombre;
-    private String Email;
-    private Integer Telefono;
-    private String Responsable;
-    private String Observaciones;
+    private String nombre;
+    private String email;
+    private Integer telefono;
+    private String responsable;
+    private String observaciones;
 
-    @OneToMany(mappedBy = "Empresa",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "empresa",fetch = FetchType.EAGER)
     private List<Alumno> alumnos = new ArrayList<>();
 
 
