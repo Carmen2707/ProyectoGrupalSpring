@@ -8,9 +8,12 @@
 <div class="login-box">
     <img style="width: 20%" src="../Imagenes/logo-CESUR.png" alt="Cesur logo">
     <h2>Bienvenido a Cesur</h2>
-    <input type="email" placeholder="Introduzca su correo"><br>
-    <input type="password" placeholder="Introduzca la contraseña"><br>
-    <button>Iniciar Sesión</button><br>
+   <form action="" method="dialog">
+    <input th:value="${alumno.email}" type="email" placeholder="Introduzca su correo" ><br>
+    <input th:value="${alumno.contrasenya}" type="password" placeholder="Introduzca la contraseña"><br>
+    <a href="${'/login'}">Iniciar Sesión</a> <br>
+
+    </form>
     <a href="#" class="olvidar-contraseña">¿Has olvidado tu contraseña?</a>
 </div>
 </body>
